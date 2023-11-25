@@ -34,7 +34,7 @@ def search_spotify_id(item_name, item_type, access_token):
     params = {
         'q': item_name,
         'type': item_type,
-        'limit': 1
+        'limit': 5
     }
     response = requests.get(search_url, headers=headers, params=params)
     if response.status_code != 200:
