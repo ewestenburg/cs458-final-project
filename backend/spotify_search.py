@@ -1,6 +1,6 @@
 import requests
 import sys
-#from params import params
+from params import params
 sys.path.append('ewestenburg/cs458-final-project')
 from auth_spotify import get_auth_token  # Importing the function from auth_spotify.py
 ACCESS_TOKEN = get_auth_token()
@@ -83,13 +83,7 @@ def filter_and_rank_tracks(tracks, criteria):
     # Return top 5 tracks
     return ranked_tracks[:5]
 
-def main():
-    params = {
-        'artist': 'the smiths',
-        'type': 'track',
-        'limit': 10,
-        'min_tempo': 120,
-    }
+def run_spotify_search(params):
 
     search_results, additional_params = spotify_search(params)
     track_ids = [track['id'] for track in search_results['tracks']['items']]
@@ -108,6 +102,8 @@ def main():
     best_matching_track_urls = [track_id_to_url[track['id']] for track in best_matching_tracks if track['id'] in track_id_to_url]
 
     print(best_matching_track_urls)
+    return(best_matching_track_urls)
 
 if __name__ == '__main__':
-    main()
+    track_urls = run_spotify_search(params)
+    print(track_urls)

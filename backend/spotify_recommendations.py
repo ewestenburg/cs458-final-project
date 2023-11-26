@@ -44,7 +44,7 @@ def search_spotify_id(item_name, item_type, access_token):
     items = search_results[item_type + 's']['items']
     return items[0]['id'] if items else None
 
-def main():
+def run_spotify_recommendations(params):
     # Check and convert seed_artists and seed_tracks names to Spotify IDs
     if 'seed_artists' in params:
         artist_ids = [search_spotify_id(name, 'artist', ACCESS_TOKEN) for name in params['seed_artists']]
@@ -57,6 +57,8 @@ def main():
     recommendations = get_recommendations(params)
     track_urls = extract_track_urls(recommendations)
     print(track_urls)
+    return(track_urls)
 
 if __name__ == '__main__':
-    main()
+    track_urls = run_spotify_recommendations(params)
+    print(track_urls)
