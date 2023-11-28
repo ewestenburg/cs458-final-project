@@ -1,6 +1,1 @@
-params = {
-    'artist': 'the smiths',
-    'type': 'track',
-    'limit': 10,
-    'min_tempo': 120,
-}
+params = {'min_valence': 0.7, 'genre': 'indie', 'max_popularity': 50, 'type': 'track', 'limit': 50}

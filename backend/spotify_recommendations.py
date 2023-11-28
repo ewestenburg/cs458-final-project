@@ -36,6 +36,7 @@ def search_spotify_id(item_name, item_type, access_token):
         'type': item_type,
         'limit': 5
     }
+
     response = requests.get(search_url, headers=headers, params=params)
     if response.status_code != 200:
         raise Exception(f"Spotify API Search Error: {response.json()}")
@@ -47,17 +48,17 @@ def search_spotify_id(item_name, item_type, access_token):
 def run_spotify_recommendations(params):
     # Check and convert seed_artists and seed_tracks names to Spotify IDs
     if 'seed_artists' in params:
-        artist_ids = [search_spotify_id(name, 'artist', ACCESS_TOKEN) for name in params['seed_artists']]
+        artist_ids = [search_spotify_id(params['seed_artists'], 'artist', ACCESS_TOKEN)]
         params['seed_artists'] = ','.join(filter(None, artist_ids))
     
     if 'seed_tracks' in params:
-        track_ids = [search_spotify_id(name, 'track', ACCESS_TOKEN) for name in params['seed_tracks']]
+        track_ids = [search_spotify_id(params['seed_tracks'], 'track', ACCESS_TOKEN)]
         params['seed_tracks'] = ','.join(filter(None, track_ids))
 
     recommendations = get_recommendations(params)
     track_urls = extract_track_urls(recommendations)
-    print(track_urls)
-    return(track_urls)
+    print(track_urls[:5])
+    return(track_urls[:5])
 
 if __name__ == '__main__':
     track_urls = run_spotify_recommendations(params)

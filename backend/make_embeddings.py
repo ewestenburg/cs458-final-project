@@ -27,5 +27,5 @@ track_urls = [
     'https://open.spotify.com/track/69yfbpvmkIaB10msnKT7Q5',
 ]
 
-output_html_file = 'spotify_tracks.html'
+output_html_file = 'frontend/public/spotify_tracks.html'
 write_html_with_embeds(track_urls, output_html_file)

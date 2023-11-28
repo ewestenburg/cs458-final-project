@@ -35,7 +35,7 @@ def get_auth_token():
     access_token = auth_response_data['access_token']
 
     # Use the access token to make authenticated requests to the Spotify API
-    print(access_token)
+    #print(access_token)
     return access_token
 
 # Function to refresh the token every hour
