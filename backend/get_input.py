@@ -211,13 +211,21 @@ def process_input(user_input):
     #Print parameters to other file
     
     temp_file_path = 'backend/temp_params.py'
+    final_file_path = 'backend/params.py'
+
+    # Write the trait dictionary to a temporary file
     with open(temp_file_path, 'w') as f:
         f.write('params = ')
         f.write(f'{trait_dict}')
         f.flush()
         f.close()
 
-    os.rename(temp_file_path, 'backend/params.py')
+    # Delete the existing params.py file if it exists
+    if os.path.exists(final_file_path):
+        os.remove(final_file_path)
+
+    # Rename the temp file to params.py
+    os.rename(temp_file_path, final_file_path)
 
     print(f"Python script executed with user input: {trait_dict}")
 

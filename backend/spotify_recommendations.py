@@ -55,6 +55,9 @@ def run_spotify_recommendations(params):
         track_ids = [search_spotify_id(params['seed_tracks'], 'track', ACCESS_TOKEN)]
         params['seed_tracks'] = ','.join(filter(None, track_ids))
 
+    if 'genre' in params:
+        params['seed_genres'] = params.pop('genre')
+
     recommendations = get_recommendations(params)
     track_urls = extract_track_urls(recommendations)
     print(track_urls[:5])

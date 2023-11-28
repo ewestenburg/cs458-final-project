@@ -1,1 +1,1 @@
-params = {'min_valence': 0.7, 'genre': 'indie', 'max_popularity': 50, 'type': 'track', 'limit': 50}
+params = {'seed_artists': 'wilco', 'min_tempo': 120, 'min_valence': 0.7, 'type': 'track', 'limit': 50}
