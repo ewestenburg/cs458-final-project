@@ -1,1 +1,1 @@
-params = {'genre': 'indie', 'min_danceability': 0.8, 'min_tempo': 120, 'seed_artists': 'phoenix', 'type': 'track', 'limit': 50}
+params = {'type': 'track', 'limit': 50}

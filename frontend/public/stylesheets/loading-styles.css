@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: whitesmoke;
+
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 10px 10px 5px;
+  background-color: #1DB954;
+  margin: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}
+
+.logo {
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.loading-message {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
