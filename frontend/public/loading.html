@@ -1,0 +1,27 @@
+<!-- loading.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading...</title>
+</head>
+<body>
+    <h1>Loading...</h1>
+
+    <script>
+        function checkStatus() {
+            fetch('/checkStatus')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'complete') {
+                        window.location.href = '/spotify_tracks.html';
+                    } else {
+                        setTimeout(checkStatus, 1000); // Check again after 1 second
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        window.onload = checkStatus;
+    </script>
+</body>
+</html>

@@ -31,10 +31,10 @@ def main():
         'limit': 5,
     }
 
-    if use_search:
-        track_urls = run_spotify_search(params)
-    else:
+    if not use_search:
         track_urls = run_spotify_recommendations(params)
+    else:
+        track_urls = run_spotify_search(params)
 
     # Generate HTML with embeddings
     output_html_file = 'frontend/public/spotify_tracks.html'

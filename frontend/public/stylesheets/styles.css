@@ -55,7 +55,7 @@ body {
     font-size: 17px;
 }
 
-.search-bar button[type=button] {
+.search-bar button {
     border-width: 2px;
     border-color: black;
     background-color: white;

@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotifly</title>
     <link rel="stylesheet" href="stylesheets/styles.css"/>
-
-
 </head>
 <body>
     <div class="header">
@@ -17,10 +15,12 @@
             <h1>Describe the song you're looking for: </h1>
         </div>
         <div class="search-bar">
-            <input id='userInput' type="text" placeholder="Sad, underground, fast, indie...">
-            <a href="spotify_tracks.html">
-                <button type="button" onclick="submitForm()">Search</button>
-            </a>
+            <!-- Wrap the input and button in a form -->
+            <form action="/search" method="post">
+                <input id='userInput' name="userInput" type="text" placeholder="Sad, underground, fast, indie...">
+                <!-- The button submits the form -->
+                <button type="submit">Search</button>
+            </form>
         </div>
     </div>
 
