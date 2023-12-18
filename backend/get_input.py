@@ -35,7 +35,6 @@ def create_feature_list():
         'chill': ['max_danceability', .3],
         'vibey': ['max_danceability', .6],
         'edgy': ['min_danceability', .8],
-        'hype': ['min_danceability', .7],
         'mellow': ['max_danceability', .3],
         'smooth': ['min_danceability', .8],
         'stiff': ['max_danceability', .2],
@@ -71,6 +70,7 @@ def create_feature_list():
 
     energy = {
         'energetic': ['min_energy', .8],
+        'hype': ['min_energy', .8],
         'lively': ['min_energy', .7], 
         'intense': ['min_energy', .8],
         'low-energy': ['max_energy', .5],

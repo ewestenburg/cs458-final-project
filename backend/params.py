@@ -1,1 +1,1 @@
-params = {'type': 'track', 'limit': 50}
+params = {'genre': 'hip-hop', 'min_energy': 0.8, 'min_loudness': -10, 'seed_artists': 'kendrick', 'type': 'track', 'limit': 50}
